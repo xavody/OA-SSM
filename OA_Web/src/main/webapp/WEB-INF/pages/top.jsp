@@ -37,11 +37,11 @@
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="/to_change_password" class="animated animated-short fadeInUp">
+                        <a href="/change_password" class="animated animated-short fadeInUp">
                             <span class="fa fa-gear"></span> 设置密码 </a>
                     </li>
                     <li class="dropdown-footer">
-                        <a href="/quit" class="">
+                        <a href="/logout" class="">
                             <span class="fa fa-power-off pr5"></span> 退出 </a>
                     </li>
                 </ul>
@@ -59,7 +59,7 @@
                         <div class="media-body">
                             <div class="media-author">刘备--总经理</div>
                             <div class="media-links">
-                                <a href="/quit">退出</a>
+                                <a href="/logout">退出</a>
                             </div>
                         </div>
                     </div>

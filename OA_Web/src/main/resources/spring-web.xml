@@ -23,4 +23,13 @@
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <!--配置拦截器-->
+    <mvc:interceptors>
+        <!--登陆拦截器-->
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="me.imtt.oa.global.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
