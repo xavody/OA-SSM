@@ -4,22 +4,33 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
+/**
+ * 报销单处理记录
+ */
 public class DealRecord {
+    //编号
     private Integer id;
 
+    //报销单编号
     private Integer claimVoucherId;
 
+    //处理人编号
     private String dealSn;
 
+    //处理时间
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm")
     private Date dealTime;
 
+    //处理类型
     private String dealWay;
 
+    //处理结果
     private String dealResult;
 
+    //结果
     private String comment;
 
+    //处理人
     private Employee dealer;
 
     public Integer getId() {

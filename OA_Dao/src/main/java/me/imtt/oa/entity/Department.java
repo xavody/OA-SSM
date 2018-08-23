@@ -1,10 +1,16 @@
 package me.imtt.oa.entity;
 
+/**
+ * 部门
+ */
 public class Department {
+    //编号
     private String sn;
 
+    //名称
     private String name;
 
+    //位置
     private String address;
 
     public String getSn() {

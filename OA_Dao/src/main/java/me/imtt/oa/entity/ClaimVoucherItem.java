@@ -1,14 +1,22 @@
 package me.imtt.oa.entity;
 
+/**
+ * 报销单明细
+ */
 public class ClaimVoucherItem {
+    //编号
     private Integer id;
 
+    //保险单编号
     private Integer claimVoucherId;
 
+    //费用类型
     private String item;
 
+    //金额
     private Double amount;
 
+    //描述
     private String comment;
 
     public Integer getId() {
