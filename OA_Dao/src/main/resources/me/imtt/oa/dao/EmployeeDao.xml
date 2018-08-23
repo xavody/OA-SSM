@@ -10,8 +10,9 @@
         <result property="departmentSn" column="department_sn" javaType="String"/>
         <result property="post" column="post" javaType="String"/>
         <association property="department" column="department_sn" javaType="Department">
-        <id property="sn" column="dsn" javaType="String"/>
-        <result property="name" column="dname" javaType="String"/>
+            <id property="sn" column="dsn" javaType="String"/>
+            <result property="name" column="dname" javaType="String"/>
+        </association>
     </resultMap>
 
     <insert id="insert" parameterType="Employee">

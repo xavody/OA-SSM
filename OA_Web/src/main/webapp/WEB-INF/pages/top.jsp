@@ -109,7 +109,7 @@
                                 <span class="glyphicon glyphicon-calendar"></span> 所有员工 </a>
                         </li>
                         <li class="active">
-                            <a href="/employee/to_add">
+                            <a href="/employee/add">
                                 <span class="glyphicon glyphicon-check"></span> 添加员工 </a>
                         </li>
                     </ul>
@@ -126,7 +126,7 @@
                                 <span class="glyphicon glyphicon-calendar"></span> 所有部门 </a>
                         </li>
                         <li class="active">
-                            <a href="/department/to_add">
+                            <a href="/department/add">
                                 <span class="glyphicon glyphicon-check"></span> 添加部门 </a>
                         </li>
                     </ul>

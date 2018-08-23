@@ -15,7 +15,7 @@ public class Constant {
 
     public static final String POST_CASHIER = "财务";
 
-    public List<String> getPosts() {
+    public static List<String> getPosts() {
         List<String> posts = new ArrayList<String>();
         posts.add(POST_STAFF);
         posts.add(POST_FM);
