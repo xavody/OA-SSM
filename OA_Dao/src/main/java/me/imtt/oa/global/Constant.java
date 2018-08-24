@@ -28,7 +28,7 @@ public class Constant {
     /**
      * 费用类别
      */
-    public List<String> getItems() {
+    public static List<String> getItems() {
         List<String> items = new ArrayList<String>();
         items.add("交通");
         items.add("餐饮");

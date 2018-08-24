@@ -7,7 +7,7 @@ public class ClaimVoucherItem {
     //编号
     private Integer id;
 
-    //保险单编号
+    //报销单编号
     private Integer claimVoucherId;
 
     //费用类型

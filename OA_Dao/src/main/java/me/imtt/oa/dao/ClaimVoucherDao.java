@@ -13,6 +13,8 @@ public interface ClaimVoucherDao {
 
     void delete(String id);
 
+    ClaimVoucher select(int id);
+
     /**
      * 创建者的所有报销单
      */

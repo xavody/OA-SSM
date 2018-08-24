@@ -11,7 +11,7 @@
         <result property="nextDealSn" column="next_deal_sn" javaType="String"/>
         <result property="totalAmount" column="total_amount" javaType="Double"/>
         <result property="status" column="status" javaType="String"/>
-        <association property="creater" column="create_sn" javaType="Employee">
+        <association property="creator" column="create_sn" javaType="Employee">
             <result property="name" column="cname" javaType="String"/>
             <result property="post" column="cpost" javaType="String"/>
         </association>

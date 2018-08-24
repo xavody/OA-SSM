@@ -12,5 +12,5 @@ public interface DealRecordDao {
     /**
      * 某个报销单的处理记录
      */
-    List<DealRecord> selectByClaimVoucher(String cvId);
+    List<DealRecord> selectByClaimVoucher(int cvId);
 }

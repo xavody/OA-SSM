@@ -91,7 +91,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/claim_voucher/to_add">
+                    <a href="/claim_voucher/add">
                         <span class="fa fa-calendar"></span>
                         <span class="sidebar-title">填写报销单</span>
                     </a>

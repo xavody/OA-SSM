@@ -20,9 +20,9 @@ public class DepartmentController {
         return "department_list";
     }
 
-    //要使用springMVC的form标签必须传递一个参数
     @RequestMapping("/add")
     public String add(Map<String, Object> map) {
+        //要使用springMVC的form标签必须传递一个参数
         map.put("department", new Department());
         return "department_add";
     }

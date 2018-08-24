@@ -16,5 +16,5 @@ public interface ClaimVoucherItemDao {
     /**
      * 某个报销单的信息
      */
-    List<ClaimVoucherItem> selectByClaimVoucher(String cvId);
+    List<ClaimVoucherItem> selectByClaimVoucher(int cvId);
 }
