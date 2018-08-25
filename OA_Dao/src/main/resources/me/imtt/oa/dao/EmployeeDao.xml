@@ -47,4 +47,17 @@
         from employee e
                  left join department d on d.sn = e.department_sn
     </select>
+
+    <select id="selectByDepartmentAndPost" resultMap="employeeMap">
+        select e.*, d.sn dsn, d.name dname
+        from employee e
+        left join department d on d.sn = e.department_sn
+        where e.sn is not null
+        <if test="dsn!=null">
+            and e.department_sn = #{dsn}
+        </if>
+        <if test="post!=null">
+            and e.post = #{post}
+        </if>
+    </select>
 </mapper>

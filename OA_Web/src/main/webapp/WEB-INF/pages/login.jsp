@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>欢迎使用爱慕课OA</title>
+    <title>欢迎使用EYEOA</title>
     <meta name="keywords" content="HTML5 Bootstrap 3 Admin Template UI Theme" />
     <meta name="description" content="AbsoluteAdmin - A Responsive HTML5 Admin UI Framework">
     <meta name="author" content="AbsoluteAdmin">
@@ -17,8 +17,8 @@
         <section id="content">
             <div class="admin-form theme-info mw500" id="login">
                 <div class="content-header">
-                    <h1> 爱慕课OA</h1>
-                    <p class="lead">欢迎使用爱慕课自动化管理系统</p>
+                    <h1> EYEOA </h1>
+                    <p class="lead">欢迎使用 EYE 自动化管理系统</p>
                 </div>
                 <div class="panel mt30 mb25">
                     <form method="post" action="loginTo" id="contact">

@@ -11,7 +11,7 @@ public interface ClaimVoucherDao {
 
     void update(ClaimVoucher claimVoucher);
 
-    void delete(String id);
+    void delete(Integer id);
 
     ClaimVoucher select(int id);
 
