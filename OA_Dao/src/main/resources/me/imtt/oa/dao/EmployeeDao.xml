@@ -9,9 +9,13 @@
         <result property="name" column="name" javaType="String"/>
         <result property="departmentSn" column="department_sn" javaType="String"/>
         <result property="post" column="post" javaType="String"/>
+        <result property="authId" column="auth_id" javaType="Integer"/>
         <association property="department" column="department_sn" javaType="Department">
             <id property="sn" column="dsn" javaType="String"/>
             <result property="name" column="dname" javaType="String"/>
+        </association>
+        <association property="authority" column="auth_id" javaType="Authority">
+            <result property="level" column="level" javaType="Integer"/>
         </association>
     </resultMap>
 
@@ -36,22 +40,25 @@
     </delete>
 
     <select id="select" parameterType="String" resultMap="employeeMap">
-        select e.*, d.sn dsn, d.name dname
+        select e.*, d.sn dsn, d.name dname, a.level
         from employee e
                  left join department d on d.sn = e.department_sn
+                 left join authority a on a.id = e.auth_id
         where e.sn = #{sn}
     </select>
 
     <select id="selectAll" resultMap="employeeMap">
-        select e.*, d.sn dsn, d.name dname
+        select e.*, d.sn dsn, d.name dname, a.level
         from employee e
                  left join department d on d.sn = e.department_sn
+                 left join authority a on a.id = e.auth_id
     </select>
 
     <select id="selectByDepartmentAndPost" resultMap="employeeMap">
         select e.*, d.sn dsn, d.name dname
         from employee e
         left join department d on d.sn = e.department_sn
+        left join authority a on a.id = e.auth_id
         where e.sn is not null
         <if test="dsn!=null">
             and e.department_sn = #{dsn}

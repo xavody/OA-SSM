@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 
 
@@ -96,41 +97,43 @@
                         <span class="sidebar-title">填写报销单</span>
                     </a>
                 </li>
-                <li class="sidebar-label pt15">基础信息管理</li>
-                <li>
-                    <a class="accordion-toggle" href="#">
-                        <span class="glyphicon glyphicon-check"></span>
-                        <span class="sidebar-title">员工管理</span>
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="nav sub-nav">
-                        <li>
-                            <a href="/employee/list">
-                                <span class="glyphicon glyphicon-calendar"></span> 所有员工 </a>
-                        </li>
-                        <li class="active">
-                            <a href="/employee/add">
-                                <span class="glyphicon glyphicon-check"></span> 添加员工 </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="accordion-toggle" href="#">
-                        <span class="fa fa-columns"></span>
-                        <span class="sidebar-title">部门管理</span>
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="nav sub-nav">
-                        <li>
-                            <a href="/department/list">
-                                <span class="glyphicon glyphicon-calendar"></span> 所有部门 </a>
-                        </li>
-                        <li class="active">
-                            <a href="/department/add">
-                                <span class="glyphicon glyphicon-check"></span> 添加部门 </a>
-                        </li>
-                    </ul>
-                </li>
+                <c:if test="${sessionScope.employee.authority.level==10}">
+                    <li class="sidebar-label pt15">基础信息管理</li>
+                    <li>
+                        <a class="accordion-toggle" href="#">
+                            <span class="glyphicon glyphicon-check"></span>
+                            <span class="sidebar-title">员工管理</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="nav sub-nav">
+                            <li>
+                                <a href="/employee/list">
+                                    <span class="glyphicon glyphicon-calendar"></span> 所有员工 </a>
+                            </li>
+                            <li class="active">
+                                <a href="/employee/add">
+                                    <span class="glyphicon glyphicon-check"></span> 添加员工 </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="accordion-toggle" href="#">
+                            <span class="fa fa-columns"></span>
+                            <span class="sidebar-title">部门管理</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="nav sub-nav">
+                            <li>
+                                <a href="/department/list">
+                                    <span class="glyphicon glyphicon-calendar"></span> 所有部门 </a>
+                            </li>
+                            <li class="active">
+                                <a href="/department/add">
+                                    <span class="glyphicon glyphicon-check"></span> 添加部门 </a>
+                            </li>
+                        </ul>
+                    </li>
+                </c:if>
             </ul>
             <div class="sidebar-toggle-mini">
                 <a href="#">

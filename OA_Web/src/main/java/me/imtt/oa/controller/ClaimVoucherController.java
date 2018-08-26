@@ -2,7 +2,6 @@ package me.imtt.oa.controller;
 
 import me.imtt.oa.biz.ClaimVoucherBiz;
 import me.imtt.oa.dto.ClaimVoucherInfo;
-import me.imtt.oa.entity.ClaimVoucherItem;
 import me.imtt.oa.entity.DealRecord;
 import me.imtt.oa.entity.Employee;
 import me.imtt.oa.global.Constant;
@@ -86,12 +85,18 @@ public class ClaimVoucherController {
         return "redirect:deal";
     }
 
+    /**
+     * 提交报销单
+     */
     @RequestMapping("/submit")
     public String submit(int id) {
         claimVoucherBiz.submit(id);
         return "redirect:deal";
     }
 
+    /**
+     * 跳转到审核报销单页面
+     */
     @RequestMapping("/check")
     public String check(int id, Map<String, Object> map) {
         map.put("claimVoucher", claimVoucherBiz.get(id));
@@ -103,6 +108,9 @@ public class ClaimVoucherController {
         return "claim_voucher_check";
     }
 
+    /**
+     * 审核报销单
+     */
     @RequestMapping("/checkTo")
     public String checkTo(HttpSession session, DealRecord dealRecord) {
         Employee employee = (Employee) session.getAttribute("employee");

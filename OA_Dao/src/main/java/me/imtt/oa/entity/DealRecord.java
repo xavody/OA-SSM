@@ -27,7 +27,7 @@ public class DealRecord {
     //处理结果
     private String dealResult;
 
-    //结果
+    //描述
     private String comment;
 
     //处理人

@@ -19,8 +19,14 @@ public class Employee {
     //职位
     private String post;
 
+    //权限编号
+    private Integer authId;
+
     //所属部门
     private Department department;
+
+    //权限
+    private Authority authority;
 
     public String getSn() {
         return sn;
@@ -60,6 +66,22 @@ public class Employee {
 
     public void setPost(String post) {
         this.post = post;
+    }
+
+    public Integer getAuthSn() {
+        return authId;
+    }
+
+    public void setAuthSn(Integer authId) {
+        this.authId = authId;
+    }
+
+    public Authority getAuthority() {
+        return authority;
+    }
+
+    public void setAuthority(Authority authority) {
+        this.authority = authority;
     }
 
     public Department getDepartment() {
