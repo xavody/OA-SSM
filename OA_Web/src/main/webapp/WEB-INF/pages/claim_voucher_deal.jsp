@@ -1,7 +1,7 @@
 ﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ page import="me.imtt.oa.global.Constant" %>
+<%@ page import="me.imtt.oa.global.Constants.ConstantClaimVoucher" %>
 <jsp:include page="top.jsp"/>
 
 <section id="content" class="table-layout animated fadeIn">
@@ -66,14 +66,14 @@
                                 <td class="text-center fw600">${cv.totalAmount}</td>
                                 <td><spring:eval expression="cv.createTime"/></td>
                                 <td>
-                                    <c:if test="${cv.status==Constant.CLAIM_VOUCHER_CREATED || cv.status==Constant.CLAIM_VOUCHER_BACK}">
+                                    <c:if test="${cv.status==ConstantClaimVoucher.CLAIM_VOUCHER_CREATED || cv.status==ConstantClaimVoucher.CLAIM_VOUCHER_BACK}">
                                         <a href="/claim_voucher/update?id=${cv.id}">修改</a>
                                         <a href="/claim_voucher/submit?id=${cv.id}">提交</a>
                                     </c:if>
-                                    <c:if test="${cv.status==Constant.CLAIM_VOUCHER_SUBMIT || cv.status==Constant.CLAIM_VOUCHER_RECHECK}">
+                                    <c:if test="${cv.status==ConstantClaimVoucher.CLAIM_VOUCHER_SUBMIT || cv.status==ConstantClaimVoucher.CLAIM_VOUCHER_RECHECK}">
                                         <a href="/claim_voucher/check?id=${cv.id}">审核</a>
                                     </c:if>
-                                    <c:if test="${cv.status==Constant.CLAIM_VOUCHER_APPROVED}">
+                                    <c:if test="${cv.status==ConstantClaimVoucher.CLAIM_VOUCHER_APPROVED}">
                                         <a href="/claim_voucher/check?id=${cv.id}">打款</a>
                                     </c:if>
                                     <a href="/claim_voucher/detail?id=${cv.id}">详细信息</a>

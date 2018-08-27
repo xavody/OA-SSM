@@ -5,14 +5,14 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 
 /**
- * 报销单处理记录
+ * 请假单处理记录
  */
-public class DealRecord {
+public class LeaveDealRecord {
     //编号
     private Integer id;
 
-    //报销单编号
-    private Integer claimVoucherId;
+    //请假单编号
+    private Integer leaveVoucherId;
 
     //处理人编号
     private String dealSn;
@@ -41,12 +41,12 @@ public class DealRecord {
         this.id = id;
     }
 
-    public Integer getClaimVoucherId() {
-        return claimVoucherId;
+    public Integer getLeaveVoucherId() {
+        return leaveVoucherId;
     }
 
-    public void setClaimVoucherId(Integer claimVoucherId) {
-        this.claimVoucherId = claimVoucherId;
+    public void setLeaveVoucherId(Integer leaveVoucherId) {
+        this.leaveVoucherId = leaveVoucherId;
     }
 
     public String getDealSn() {

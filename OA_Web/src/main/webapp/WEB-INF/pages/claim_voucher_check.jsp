@@ -2,7 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page import="me.imtt.oa.global.Constant" %>
+<%@ page import="me.imtt.oa.global.Constants.ConstantClaimVoucher" %>
+<%@ page import="me.imtt.oa.global.Constants.ConstantPosts" %>
 <jsp:include page="top.jsp"/>
 
 <section id="content" class="table-layout animated fadeIn">
@@ -71,17 +72,17 @@
                                 </label>
                             </div>
                             <div class="panel-footer text-right">
-                                <c:if test="${sessionScope.employee.post==Constant.POST_FM || sessionScope.employee.post==Constant.POST_GM}">
+                                <c:if test="${sessionScope.employee.post==ConstantPosts.POST_FM || sessionScope.employee.post==ConstantPosts.POST_GM}">
                                     <button type="submit" class="button" name="dealWay"
-                                            value="${Constant.DEAL_PASS}">${Constant.DEAL_PASS}</button>
+                                            value="${ConstantClaimVoucher.DEAL_PASS}">${ConstantClaimVoucher.DEAL_PASS}</button>
                                     <button type="submit" class="button" name="dealWay"
-                                            value="${Constant.DEAL_BACK}">${Constant.DEAL_BACK}</button>
+                                            value="${ConstantClaimVoucher.DEAL_BACK}">${ConstantClaimVoucher.DEAL_BACK}</button>
                                     <button type="submit" class="button" name="dealWay"
-                                            value="${Constant.DEAL_REJECT}">${Constant.DEAL_REJECT}</button>
+                                            value="${ConstantClaimVoucher.DEAL_REJECT}">${ConstantClaimVoucher.DEAL_REJECT}</button>
                                 </c:if>
-                                <c:if test="${sessionScope.employee.post==Constant.POST_CASHIER}">
+                                <c:if test="${sessionScope.employee.post==ConstantPosts.POST_CASHIER}">
                                     <button type="submit" class="button" name="dealWay"
-                                            value="${Constant.DEAL_PAID}">${Constant.DEAL_PAID}</button>
+                                            value="${ConstantClaimVoucher.DEAL_PAID}">${ConstantClaimVoucher.DEAL_PAID}</button>
                                 </c:if>
                                 <button type="button" class="button" onclick="javascript:window.history.go(-1);"> 返回
                                 </button>

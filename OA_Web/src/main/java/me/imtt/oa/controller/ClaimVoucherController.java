@@ -2,9 +2,9 @@ package me.imtt.oa.controller;
 
 import me.imtt.oa.biz.ClaimVoucherBiz;
 import me.imtt.oa.dto.ClaimVoucherInfo;
-import me.imtt.oa.entity.DealRecord;
+import me.imtt.oa.entity.ClaimDealRecord;
 import me.imtt.oa.entity.Employee;
-import me.imtt.oa.global.Constant;
+import me.imtt.oa.global.Constants.ConstantClaimVoucher;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -28,7 +28,7 @@ public class ClaimVoucherController {
 
     @RequestMapping("/add")
     public String add(Map<String, Object> map) {
-        map.put("items", Constant.getItems());
+        map.put("items", ConstantClaimVoucher.getItems());
         map.put("claimVoucherInfo", new ClaimVoucherInfo());
 
         return "claim_voucher_add";
@@ -66,7 +66,7 @@ public class ClaimVoucherController {
 
     @RequestMapping("/update")
     public String update(int id, Map<String, Object> map) {
-        map.put("items", Constant.getItems());
+        map.put("items", ConstantClaimVoucher.getItems());
 
         ClaimVoucherInfo claimVoucherInfo = new ClaimVoucherInfo();
         claimVoucherInfo.setClaimVoucher(claimVoucherBiz.get(id));
@@ -102,9 +102,9 @@ public class ClaimVoucherController {
         map.put("claimVoucher", claimVoucherBiz.get(id));
         map.put("items", claimVoucherBiz.getItems(id));
         map.put("records", claimVoucherBiz.getRecords(id));
-        DealRecord dealRecord = new DealRecord();
-        dealRecord.setClaimVoucherId(id);
-        map.put("record", dealRecord);
+        ClaimDealRecord claimDealRecord = new ClaimDealRecord();
+        claimDealRecord.setClaimVoucherId(id);
+        map.put("record", claimDealRecord);
         return "claim_voucher_check";
     }
 
@@ -112,10 +112,10 @@ public class ClaimVoucherController {
      * 审核报销单
      */
     @RequestMapping("/checkTo")
-    public String checkTo(HttpSession session, DealRecord dealRecord) {
+    public String checkTo(HttpSession session, ClaimDealRecord claimDealRecord) {
         Employee employee = (Employee) session.getAttribute("employee");
-        dealRecord.setDealSn(employee.getSn());
-        claimVoucherBiz.deal(dealRecord);
+        claimDealRecord.setDealSn(employee.getSn());
+        claimVoucherBiz.deal(claimDealRecord);
 
         return "redirect:deal";
     }

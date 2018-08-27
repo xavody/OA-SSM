@@ -3,7 +3,7 @@ package me.imtt.oa.controller;
 import me.imtt.oa.biz.DepartmentBiz;
 import me.imtt.oa.biz.EmployeeBiz;
 import me.imtt.oa.entity.Employee;
-import me.imtt.oa.global.Constant;
+import me.imtt.oa.global.Constants.ConstantPosts;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -30,7 +30,7 @@ public class EmployeeController {
     public String add(Map<String, Object> map) {
         map.put("employee", new Employee());
         map.put("dlist", departmentBiz.getAll());
-        map.put("plist", Constant.getPosts());
+        map.put("plist", ConstantPosts.getPosts());
         return "employee_add";
     }
 
@@ -44,7 +44,7 @@ public class EmployeeController {
     public String update(String sn, Map<String, Object> map) {
         map.put("employee", employeeBiz.get(sn));
         map.put("dlist", departmentBiz.getAll());
-        map.put("plist", Constant.getPosts());
+        map.put("plist", ConstantPosts.getPosts());
         return "employee_update";
     }
 

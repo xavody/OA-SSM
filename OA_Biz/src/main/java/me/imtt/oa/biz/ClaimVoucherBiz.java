@@ -1,8 +1,8 @@
 package me.imtt.oa.biz;
 
+import me.imtt.oa.entity.ClaimDealRecord;
 import me.imtt.oa.entity.ClaimVoucher;
 import me.imtt.oa.entity.ClaimVoucherItem;
-import me.imtt.oa.entity.DealRecord;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ public interface ClaimVoucherBiz {
     /**
      * 获取报销单审核记录
      */
-    List<DealRecord> getRecords(int cvId);
+    List<ClaimDealRecord> getRecords(int cvId);
 
     /**
      * 获取个人报销单
@@ -50,5 +50,5 @@ public interface ClaimVoucherBiz {
     /**
      * 对报销单进一步处理
      */
-    void deal(DealRecord dealRecord);
+    void deal(ClaimDealRecord claimDealRecord);
 }
