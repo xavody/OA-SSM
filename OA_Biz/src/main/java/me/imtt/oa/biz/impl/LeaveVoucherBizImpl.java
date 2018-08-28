@@ -58,7 +58,7 @@ public class LeaveVoucherBizImpl implements LeaveVoucherBiz {
         LeaveVoucher leaveVoucher = leaveVoucherDao.select(id);
         Employee employee = employeeDao.select(leaveVoucher.getCreateSn());
 
-        leaveVoucher.setStatus(ConstantLeaveVoucher.DEAL_SUBMIT);
+        leaveVoucher.setStatus(ConstantLeaveVoucher.Leave_VOUCHER_SUBMIT);
         leaveVoucher.setNextDealSn(employeeDao.selectByDepartmentAndPost(
                 employee.getDepartmentSn(), ConstantPosts.POST_FM).get(0).getSn());
 
@@ -78,7 +78,36 @@ public class LeaveVoucherBizImpl implements LeaveVoucherBiz {
     }
 
     public void deal(LeaveDealRecord leaveDealRecord) {
+        LeaveVoucher leaveVoucher = leaveVoucherDao.select(leaveDealRecord.getLeaveVoucherId());
+        Employee employee = employeeDao.select(leaveDealRecord.getDealSn());
 
+        leaveDealRecord.setDealTime(new Date());
+        if (leaveDealRecord.getDealWay().equals(ConstantLeaveVoucher.DEAL_APPROVE)) {
+            leaveVoucher.setStatus(ConstantLeaveVoucher.Leave_VOUCHER_APPROVED);
+
+            //10004为人事部部门编号，请假单的最后通过由人事部部门经理确认
+            leaveVoucher.setNextDealSn(employeeDao.selectByDepartmentAndPost(
+                    "10004", ConstantPosts.POST_FM).get(0).getSn());
+
+            leaveDealRecord.setDealResult(ConstantLeaveVoucher.Leave_VOUCHER_APPROVED);
+        } else if (leaveDealRecord.getDealWay().equals(ConstantLeaveVoucher.DEAL_BACK)) {
+            leaveVoucher.setStatus(ConstantLeaveVoucher.Leave_VOUCHER_BACK);
+            leaveVoucher.setNextDealSn(leaveVoucher.getCreateSn());
+
+            leaveDealRecord.setDealResult(ConstantLeaveVoucher.Leave_VOUCHER_BACK);
+        } else if (leaveDealRecord.getDealWay().equals(ConstantLeaveVoucher.DEAL_REJECT)) {
+            leaveVoucher.setStatus(ConstantLeaveVoucher.Leave_VOUCHER_TERMINATED);
+            leaveVoucher.setNextDealSn(null);
+
+            leaveDealRecord.setDealResult(ConstantLeaveVoucher.Leave_VOUCHER_TERMINATED);
+        } else if (leaveDealRecord.getDealWay().equals(ConstantLeaveVoucher.DEAL_PASS)) {
+            leaveVoucher.setStatus(ConstantLeaveVoucher.Leave_VOUCHER_PASS);
+            leaveVoucher.setNextDealSn(null);
+
+            leaveDealRecord.setDealResult(ConstantLeaveVoucher.Leave_VOUCHER_PASS);
+        }
+
+        leaveDealRecordDao.insert(leaveDealRecord);
+        leaveVoucherDao.update(leaveVoucher);
     }
-
 }

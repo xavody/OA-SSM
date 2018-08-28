@@ -5,7 +5,7 @@
 <mapper namespace="me.imtt.oa.dao.LeaveDealRecordDao">
     <resultMap id="deal_record" type="LeaveDealRecord">
         <id property="id" column="id" javaType="Integer"/>
-        <result property="leavelaimVoucherId" column="leave_voucher_id" javaType="Integer"/>
+        <result property="leaveVoucherId" column="leave_voucher_id" javaType="Integer"/>
         <result property="dealSn" column="deal_sn" javaType="String"/>
         <result property="dealTime" column="deal_time" javaType="java.util.Date"/>
         <result property="dealWay" column="deal_way" javaType="String"/>

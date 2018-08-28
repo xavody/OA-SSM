@@ -39,24 +39,24 @@
         where id = #{id}
     </delete>
     <select id="select" resultMap="leaveVoucher" parameterType="Integer">
-        select lv.*, le.name lname, le.post lpost, d.name dname, d.post dpost
+        select lv.*, ce.name cname, ce.post cpost, d.name dname, d.post dpost
         from leave_voucher lv
-                 left join employee le on le.sn = lv.create_sn
+                 left join employee ce on ce.sn = lv.create_sn
                  left join employee d on d.sn = lv.next_deal_sn
         where lv.id = #{id}
     </select>
     <select id="selectByCreateSn" resultMap="leaveVoucher" parameterType="String">
-        select lv.*, le.name cname, le.post lpost, d.name dname, d.post dpost
+        select lv.*, ce.name cname, ce.post cpost, d.name dname, d.post dpost
         from leave_voucher lv
-                 left join employee le on le.sn = lv.create_sn
+                 left join employee ce on ce.sn = lv.create_sn
                  left join employee d on d.sn = lv.next_deal_sn
         where lv.create_sn = #{csn}
         order by lv.create_time desc
     </select>
     <select id="selectByNextDealSn" resultMap="leaveVoucher" parameterType="String">
-        select lv.*, le.name lname, le.post lpost, d.name dname, d.post dpost
+        select lv.*, ce.name cname, ce.post cpost, d.name dname, d.post dpost
         from leave_voucher lv
-                 left join employee le on le.sn = lv.create_sn
+                 left join employee ce on ce.sn = lv.create_sn
                  left join employee d on d.sn = lv.next_deal_sn
         where lv.next_deal_sn = #{ndsn}
         order by lv.create_time desc
