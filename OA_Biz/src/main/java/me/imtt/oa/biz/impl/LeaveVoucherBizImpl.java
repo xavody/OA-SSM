@@ -59,9 +59,12 @@ public class LeaveVoucherBizImpl implements LeaveVoucherBiz {
         Employee employee = employeeDao.select(leaveVoucher.getCreateSn());
 
         leaveVoucher.setStatus(ConstantLeaveVoucher.Leave_VOUCHER_SUBMIT);
-        leaveVoucher.setNextDealSn(employeeDao.selectByDepartmentAndPost(
-                employee.getDepartmentSn(), ConstantPosts.POST_FM).get(0).getSn());
-
+        if (leaveVoucher.getCreator().getPost().equals(ConstantPosts.POST_GM)) {
+            leaveVoucher.setNextDealSn(leaveVoucher.getCreateSn());
+        } else {
+            leaveVoucher.setNextDealSn(employeeDao.selectByDepartmentAndPost(
+                    employee.getDepartmentSn(), ConstantPosts.POST_FM).get(0).getSn());
+        }
         //请假单提交
         leaveVoucherDao.update(leaveVoucher);
 

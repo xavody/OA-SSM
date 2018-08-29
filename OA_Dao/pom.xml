@@ -49,5 +49,10 @@
             <version>${mybatis-spring.veriosn}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>${c3p0.version}</version>
+        </dependency>
     </dependencies>
 </project>
