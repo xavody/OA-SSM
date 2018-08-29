@@ -62,20 +62,21 @@
                                 </label>
                             </div>
                             <div class="panel-footer text-right">
-                                <%--<c:if test="${leaveVoucher.status==ConstantLeaveVoucher.Leave_VOUCHER_APPROVED}">--%>
-                                    <%--<a href="/leave_voucher/check?id=${lv.id}">通过</a>--%>
-                                <%--</c:if>--%>
                                 <c:if test="${sessionScope.employee.post==ConstantPosts.POST_FM || sessionScope.employee.post==ConstantPosts.POST_GM}">
-                                    <button type="submit" class="button" name="dealWay"
-                                            value="${ConstantLeaveVoucher.DEAL_APPROVE}">${ConstantLeaveVoucher.DEAL_APPROVE}</button>
-                                    <button type="submit" class="button" name="dealWay"
-                                            value="${ConstantLeaveVoucher.DEAL_BACK}">${ConstantLeaveVoucher.DEAL_BACK}</button>
-                                    <button type="submit" class="button" name="dealWay"
-                                            value="${ConstantLeaveVoucher.DEAL_REJECT}">${ConstantLeaveVoucher.DEAL_REJECT}</button>
+                                    <c:if test="${leaveVoucher.status!=ConstantLeaveVoucher.Leave_VOUCHER_APPROVED}">
+                                        <button type="submit" class="button" name="dealWay"
+                                                value="${ConstantLeaveVoucher.DEAL_APPROVE}">${ConstantLeaveVoucher.DEAL_APPROVE}</button>
+                                        <button type="submit" class="button" name="dealWay"
+                                                value="${ConstantLeaveVoucher.DEAL_BACK}">${ConstantLeaveVoucher.DEAL_BACK}</button>
+                                        <button type="submit" class="button" name="dealWay"
+                                                value="${ConstantLeaveVoucher.DEAL_REJECT}">${ConstantLeaveVoucher.DEAL_REJECT}</button>
+                                    </c:if>
                                 </c:if>
-                                <c:if test="${sessionScope.employee.post==ConstantPosts.POST_FM && sessionScope.employee.department.name=='人事部'}">
+                                <c:if test="${sessionScope.employee.post==ConstantPosts.POST_FM
+                                && sessionScope.employee.department.name=='人事部'
+                                && leaveVoucher.status==ConstantLeaveVoucher.Leave_VOUCHER_APPROVED}">
                                     <button type="submit" class="button" name="dealWay"
-                                            value="${ConstantLeaveVoucher.DEAL_PASS}">${ConstantLeaveVoucher.DEAL_PASS}</button>
+                                            value="${ConstantLeaveVoucher.DEAL_CONFIRM}">${ConstantLeaveVoucher.DEAL_CONFIRM}</button>
                                 </c:if>
                                 <button type="button" class="button" onclick="javascript:window.history.go(-1);"> 返回
                                 </button>

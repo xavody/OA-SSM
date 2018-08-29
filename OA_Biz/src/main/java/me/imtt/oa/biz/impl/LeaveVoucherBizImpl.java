@@ -100,7 +100,7 @@ public class LeaveVoucherBizImpl implements LeaveVoucherBiz {
             leaveVoucher.setNextDealSn(null);
 
             leaveDealRecord.setDealResult(ConstantLeaveVoucher.Leave_VOUCHER_TERMINATED);
-        } else if (leaveDealRecord.getDealWay().equals(ConstantLeaveVoucher.DEAL_PASS)) {
+        } else if (leaveDealRecord.getDealWay().equals(ConstantLeaveVoucher.DEAL_CONFIRM)) {
             leaveVoucher.setStatus(ConstantLeaveVoucher.Leave_VOUCHER_PASS);
             leaveVoucher.setNextDealSn(null);
 

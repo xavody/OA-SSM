@@ -74,7 +74,7 @@
                                         <a href="/leave_voucher/check?id=${lv.id}">处理</a>
                                     </c:if>
                                     <c:if test="${lv.status==ConstantLeaveVoucher.Leave_VOUCHER_APPROVED}">
-                                        <a href="/leave_voucher/check?id=${lv.id}">通过</a>
+                                        <a href="/leave_voucher/check?id=${lv.id}">确认</a>
                                     </c:if>
                                     <a href="/leave_voucher/detail?id=${lv.id}">详细信息</a>
                                 </td>

@@ -19,5 +19,5 @@ public class ConstantLeaveVoucher {
     public static final String DEAL_BACK = "打回";
     public static final String DEAL_REJECT = "拒绝";
     public static final String DEAL_APPROVE = "同意";
-    public static final String DEAL_PASS = "通过";
+    public static final String DEAL_CONFIRM = "确认";
 }
