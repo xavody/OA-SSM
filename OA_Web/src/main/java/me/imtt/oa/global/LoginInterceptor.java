@@ -14,8 +14,6 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String url = request.getRequestURI();
-        System.out.println("getRequestURI()-->" + request.getRequestURI());
-        System.out.println("getRequestURL()-->" + request.getRequestURL());
 
         //登陆相关处理放行
         if (url.toLowerCase().contains("login")) {
