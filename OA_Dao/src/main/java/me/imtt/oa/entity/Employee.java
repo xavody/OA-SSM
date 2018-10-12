@@ -4,28 +4,44 @@ package me.imtt.oa.entity;
  * 员工
  */
 public class Employee {
-    //编号
+    /**
+     * 编号
+     */
     private String sn;
 
-    //密码
+    /**
+     * 密码
+     */
     private String password;
 
-    //姓名
+    /**
+     * 姓名
+     */
     private String name;
 
-    //所属部门编号
+    /**
+     * 所属部门编号
+     */
     private String departmentSn;
 
-    //职位
+    /**
+     * 职位
+     */
     private String post;
 
-    //权限编号
+    /**
+     * 权限编号
+     */
     private Integer authId;
 
-    //所属部门
+    /**
+     * 所属部门
+     */
     private Department department;
 
-    //权限
+    /**
+     * 权限
+     */
     private Authority authority;
 
     public String getSn() {

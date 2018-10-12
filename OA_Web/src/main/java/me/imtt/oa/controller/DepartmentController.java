@@ -33,7 +33,9 @@ public class DepartmentController {
         return "redirect:list";
     }
 
-    //params参数进行过滤，必须传递一个参数
+    /**
+     * params参数进行过滤，必须传递一个参数
+     */
     @RequestMapping(value = "/update", params = "sn")
     public String update(String sn, Map<String, Object> map) {
         map.put("department", departmentBiz.get(sn));

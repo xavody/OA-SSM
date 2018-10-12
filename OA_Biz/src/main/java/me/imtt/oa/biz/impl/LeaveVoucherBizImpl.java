@@ -5,8 +5,8 @@ import me.imtt.oa.dao.EmployeeDao;
 import me.imtt.oa.dao.LeaveDealRecordDao;
 import me.imtt.oa.dao.LeaveVoucherDao;
 import me.imtt.oa.entity.*;
-import me.imtt.oa.global.Constants.ConstantLeaveVoucher;
-import me.imtt.oa.global.Constants.ConstantPosts;
+import me.imtt.oa.global.constants.ConstantLeaveVoucher;
+import me.imtt.oa.global.constants.ConstantPosts;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

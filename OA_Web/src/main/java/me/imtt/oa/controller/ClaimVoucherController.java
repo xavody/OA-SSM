@@ -4,7 +4,7 @@ import me.imtt.oa.biz.ClaimVoucherBiz;
 import me.imtt.oa.dto.ClaimVoucherInfo;
 import me.imtt.oa.entity.ClaimDealRecord;
 import me.imtt.oa.entity.Employee;
-import me.imtt.oa.global.Constants.ConstantClaimVoucher;
+import me.imtt.oa.global.constants.ConstantClaimVoucher;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -40,7 +40,6 @@ public class ClaimVoucherController {
         claimVoucherInfo.getClaimVoucher().setCreateSn(employee.getSn());
         claimVoucherBiz.save(claimVoucherInfo.getClaimVoucher(), claimVoucherInfo.getItems());
 
-//        return "redirect:detail?id=" + claimVoucherInfo.getClaimVoucher().getId();
         return "redirect:deal";
     }
 

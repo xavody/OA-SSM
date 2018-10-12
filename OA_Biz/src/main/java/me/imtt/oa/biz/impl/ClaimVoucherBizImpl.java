@@ -9,8 +9,8 @@ import me.imtt.oa.entity.ClaimVoucher;
 import me.imtt.oa.entity.ClaimVoucherItem;
 import me.imtt.oa.entity.ClaimDealRecord;
 import me.imtt.oa.entity.Employee;
-import me.imtt.oa.global.Constants.ConstantClaimVoucher;
-import me.imtt.oa.global.Constants.ConstantPosts;
+import me.imtt.oa.global.constants.ConstantClaimVoucher;
+import me.imtt.oa.global.constants.ConstantPosts;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

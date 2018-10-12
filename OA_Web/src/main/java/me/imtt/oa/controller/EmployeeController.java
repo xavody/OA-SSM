@@ -3,7 +3,7 @@ package me.imtt.oa.controller;
 import me.imtt.oa.biz.DepartmentBiz;
 import me.imtt.oa.biz.EmployeeBiz;
 import me.imtt.oa.entity.Employee;
-import me.imtt.oa.global.Constants.ConstantPosts;
+import me.imtt.oa.global.constants.ConstantPosts;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -25,7 +25,9 @@ public class EmployeeController {
         return "employee_list";
     }
 
-    //要使用springMVC的form标签必须传递一个参数
+    /**
+     * 要使用springMVC的form标签必须传递一个参数
+     */
     @RequestMapping("/add")
     public String add(Map<String, Object> map) {
         map.put("employee", new Employee());

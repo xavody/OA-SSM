@@ -1,4 +1,4 @@
-package me.imtt.oa.global.Constants;
+package me.imtt.oa.global.constants;
 
 import java.util.ArrayList;
 import java.util.List;

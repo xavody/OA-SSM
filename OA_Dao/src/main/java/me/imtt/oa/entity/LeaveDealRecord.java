@@ -8,29 +8,45 @@ import java.util.Date;
  * 请假单处理记录
  */
 public class LeaveDealRecord {
-    //编号
+    /**
+     * 编号
+     */
     private Integer id;
 
-    //请假单编号
+    /**
+     * 请假单编号
+     */
     private Integer leaveVoucherId;
 
-    //处理人编号
+    /**
+     * 处理人编号
+     */
     private String dealSn;
 
-    //处理时间
+    /**
+     * 处理时间
+     */
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm")
     private Date dealTime;
 
-    //处理类型
+    /**
+     * 处理类型
+     */
     private String dealWay;
 
-    //处理结果
+    /**
+     * 处理结果
+     */
     private String dealResult;
 
-    //描述
+    /**
+     * 描述
+     */
     private String comment;
 
-    //处理人
+    /**
+     * 处理人
+     */
     private Employee dealer;
 
     public Integer getId() {

@@ -4,13 +4,19 @@ package me.imtt.oa.entity;
  * 账号权限
  */
 public class Authority {
-    //编号
+    /**
+     * 编号
+     */
     private Integer id;
 
-    //权限等级
+    /**
+     * 权限等级
+     */
     private Integer level;
 
-    //描述
+    /**
+     * 描述
+     */
     private String comment;
 
     public Integer getId() {

@@ -8,32 +8,50 @@ import java.util.Date;
  * 请假单
  */
 public class LeaveVoucher {
-    //编号
+    /**
+     * 编号
+     */
     private Integer id;
 
-    //事由
+    /**
+     * 事由
+     */
     private String cause;
 
-    //创建人编号
+    /**
+     * 创建人编号
+     */
     private String createSn;
 
-    //创建时间
+    /**
+     * 创建时间
+     */
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm")
     private Date createTime;
 
-    //待处理人编号
+    /**
+     * 待处理人编号
+     */
     private String nextDealSn;
 
-    //请假天数
+    /**
+     * 请假天数
+     */
     private Integer totalDays;
 
-    //状态
+    /**
+     * 状态
+     */
     private String status;
 
-    //创建人
+    /**
+     * 创建人
+     */
     private Employee creator;
 
-    //处理人
+    /**
+     * 处理人
+     */
     private Employee dealer;
 
     public Integer getId() {

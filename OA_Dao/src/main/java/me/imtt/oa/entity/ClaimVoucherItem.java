@@ -4,19 +4,29 @@ package me.imtt.oa.entity;
  * 报销单明细
  */
 public class ClaimVoucherItem {
-    //编号
+    /**
+     * 编号
+     */
     private Integer id;
 
-    //报销单编号
+    /**
+     * 报销单编号
+     */
     private Integer claimVoucherId;
 
-    //费用类型
+    /**
+     * 费用类型
+     */
     private String item;
 
-    //金额
+    /**
+     * 金额
+     */
     private Double amount;
 
-    //描述
+    /**
+     * 描述
+     */
     private String comment;
 
     public Integer getId() {

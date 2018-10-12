@@ -17,12 +17,8 @@ OA办公管理系统
 8. Spring 拦截器
 
 ## 显示示例
-1. 网站：[https://oa.imtt.me](https://oa.imtt.me)
-2. 登陆信息
-    - 员工账号：10004，密码：000000
-    - 部门经理账号：10003，密码：000000
-3. 管理员页面：![管理员](README/OA1.png)
-   非管理员页面：![非管理员](README/OA2.png)
+1. 管理员页面：![管理员](README/OA1.png)
+2. 非管理员页面：![非管理员](README/OA2.png)
 
 ## 其它
 前台页面源码基于：[http://admindesigns.com/demos/absolute/1.1/dashboard.html](http://admindesigns.com/demos/absolute/1.1/dashboard.html)
